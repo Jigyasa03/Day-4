@@ -1,0 +1,46 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+   //ch c,t,s,b;
+   char c[3][20]={"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
+   char t[8][30]={"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
+   char s[4][20]={"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
+   char b[3][20]={"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
+   char o;
+   int k;
+   int i;
+   //int o,i;
+  // cout<<"enter among:COFFE,TEA,SOUPS,BEVERAGES";
+  cout<<"Welcome to CCD";
+   cin>>o>>k;
+   if(o=='c'){
+       for(int i=0;i<3;i++){
+           if(i+1==k)
+           cout<<"Enjoy your"<<" "<<c[i];
+       }
+    //   if(i==4)
+    //   cout<<"invalid";
+   }
+   else if(o=='t'){
+       for(int i=0;i<8;i++){
+           if(i+1==k)
+           cout<<"Enjoy your"<<" "<<t[i];
+       }
+   }
+   else if(o=='s'){
+       for(int i=0;i<4;i++){
+           if(k==i+1)
+           cout<<"Enjoy your"<<" "<<s[i];
+       }
+   }
+   else if(o=='b'){
+       for(int i=0;i<3;i++){
+           if(k==i+1)
+           cout<<"Enjoy your"<<" "<<b[i];
+       }
+   }else{
+       cout<<"Invalid";
+   }
+    return 0;
+}
