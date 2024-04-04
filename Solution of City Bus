@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+string st[8] = {"TH", "GA", "IC", "HA", "TE", "LU", "NI", "CA"};
+int di[8] = {800, 600, 750, 900, 1400, 1200, 1100, 1500};
+
+int getFare(string s, string d) {
+    int start = -1, end = -1, totalDistance = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (st[i] == s) {
+            start = i;
+        }
+        if (st[i] == d) {
+            end = i;
+        }
+    }
+
+    // If source or destination is not found, return -1 (invalid)
+    if (start == -1 || end == -1) {
+        return -1;
+    }
+
+   
+    if (start <= end) {
+        for (int i = start; i < end; i++) {
+            totalDistance += di[i];
+        }
+    } else {
+        for (int i = start; i < 8; i++) {
+            totalDistance += di[i];
+        }
+        for (int i = 0; i < end; i++) {
+            totalDistance += di[i];
+        }
+    }
+
+    int fare =totalDistance* 0.005;
+    return fare;
+}
+
+int main() {
+    string s, d;
+    cout << "Enter starting and destination points (first two characters of the stop name): ";
+    cin >> s >> d;
+
+    int result = getFare(s, d);
+    if (result == -1) {
+        cout << "INVALID OUTPUT";
+    } else {
+        cout << result << " INR";
+    }
+
+    return 0;
+}
